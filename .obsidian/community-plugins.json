@@ -1,4 +1,6 @@
 [
   "dataview",
-  "obsidian-git"
+  "obsidian-git",
+  "code-styler",
+  "highlightr-plugin"
 ]

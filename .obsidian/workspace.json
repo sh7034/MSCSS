@@ -8,20 +8,91 @@
         "type": "tabs",
         "children": [
           {
-            "id": "212c671a0fec2d7b",
+            "id": "374c021ca272e70d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "systemctl.md",
+                "file": "mysql.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "mysql"
+            }
+          },
+          {
+            "id": "8861f27ee70c42d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MySQL 쿼리.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MySQL 쿼리"
+            }
+          },
+          {
+            "id": "1cb353d57da4c1b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LINUX/tar와 백업.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "tar와 백업"
+            }
+          },
+          {
+            "id": "f56dcca0c89533a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LINUX/systemctl.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "systemctl"
             }
+          },
+          {
+            "id": "e04d9c737ec90f4c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "LINUX/firewall daemon.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "firewall daemon"
+            }
+          },
+          {
+            "id": "593d36f0895755d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CISCO/CISCO IOS Router.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CISCO IOS Router"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -94,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "systemctl.md",
+                "file": "mysql.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for systemctl"
+              "title": "Backlinks for mysql"
             }
           },
           {
@@ -184,17 +255,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "212c671a0fec2d7b",
+  "active": "593d36f0895755d8",
   "lastOpenFiles": [
-    "Application Gateway.md",
+    "LINUX/firewall daemon.md",
+    "CISCO/CISCO IOS Router.md",
+    "LINUX/systemctl.md",
+    "LINUX/tar와 백업.md",
     "Welcome.md",
-    "tar와 백업.md",
-    "systemctl.md",
+    "Azure/Bastion SSH 접속.md",
+    "MySQL/mysql.md",
+    "Azure",
+    "LINUX",
+    "CISCO",
+    "MySQL",
+    "MySQL/MySQL 쿼리.md",
+    "MySQL/MySQL EX1.md",
+    "Regular Expression.md",
+    "MySQL.md",
+    "LINUX/grep과 egrep.md",
+    "Azure/Application Gateway.md",
     "SSL 인증서.md",
-    "mysql.md",
-    "grep과 egrep.md",
-    "firewall daemon.md",
-    "Bastion Tunnel 접속.md",
-    "Bastion SSH 접속.md"
+    "Azure/Bastion Tunnel 접속.md"
   ]
 }
