@@ -1,4 +1,4 @@
-
+```
 R2(config-line)#transport input ssh
 R2(config-line)#exit
 R2(config)#username cisco privilege 15 secret class
@@ -16,4 +16,5 @@ How many bits in the modulus [512]: 2048
 [OK] (elapsed time was 3 seconds)
 
 R2(config)#ip ssh version 2
+```
 
