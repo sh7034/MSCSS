@@ -8,59 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ff36fb29d3b014db",
+            "id": "5ce19e2ab766ec78",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CISCO/CISCO IOS Router.md",
+                "file": "MySQL/Mysql 데이터 파일로 사용.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CISCO IOS Router"
+              "title": "Mysql 데이터 파일로 사용"
             }
           },
           {
-            "id": "d3b88d895f169a15",
+            "id": "beb74b21bdbf5b89",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CISCO/CISCO 가상터미널 콘솔.md",
+                "file": "MySQL/MySQL 쿼리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CISCO 가상터미널 콘솔"
+              "title": "MySQL 쿼리"
             }
           },
           {
-            "id": "19c964add4342356",
+            "id": "90548cf2c19d68d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CISCO/라우팅 프로토콜.md",
+                "file": "MySQL/MySQL EX2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "라우팅 프로토콜"
-            }
-          },
-          {
-            "id": "a94b5a71f67da457",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CISCO/ACL.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ACL"
+              "title": "MySQL EX2"
             }
           }
         ],
@@ -121,7 +107,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "13b67b1ccd1e0d81",
@@ -227,15 +214,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d13b25fe637b5cd2",
+  "active": "90548cf2c19d68d0",
   "lastOpenFiles": [
-    "Untitled.md",
-    "CISCO/라우팅 프로토콜.md",
-    "CISCO/CISCO 가상터미널 콘솔.md",
-    "CISCO/VLAN.md",
-    "CISCO/ACL.md",
     "MySQL/MySQL 쿼리.md",
+    "MySQL/MySQL EX2.md",
+    "MySQL/Mysql 데이터 파일로 사용.md",
+    "MySQL/MySQL EX1.md",
     "MySQL/mysql.md",
-    "CISCO/CISCO IOS Router.md"
+    "CISCO/CISCO IOS Router.md",
+    "CISCO/CISCO 가상터미널 콘솔.md",
+    "CISCO/라우팅 프로토콜.md",
+    "Untitled.md",
+    "CISCO/VLAN.md",
+    "CISCO/ACL.md"
   ]
 }

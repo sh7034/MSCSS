@@ -49,3 +49,38 @@ SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 `{mysql}LEFT JOIN`: `{mysql}ON`조건과 일치하지 않아도 `{mysql}FROM` 테이블의 데이터는 모두 표시된다. 
 `{mysql}RIGHT JOIN`: `{mysql}ON`조건과 일치하지 않아도 `{mysql}JOIN` 테이블의 데이터는 모두 표시된다. 
 `{mysql}CROSS JOIN`: `{mysql}ON`조건과 일치하지 않아도 양쪽 테이블의 데이터가 모두 표시된다. `{mysql}ON`조건과 일치하면 중복 없이 합쳐서 표시된다.
+
+##### CASE문
+```mysql
+SELECT ProductName, Price,
+  CASE
+    WHEN Price >= 100 THEN 'HIGH'
+    WHEN Price >= 50 THEN 'MID'
+    ELSE 'LOW'
+  END AS price_level
+  FROM Products;
+```
+CASE문을 정의할 때는 조건의 순서가 중요하다.
+##### 집계함수와 GROUP BY
+```mysql
+SELECT CustomerID, COUNT(*) AS order_count
+  FROM Orders
+  GROUP BY CustomerID;
+```
+GROUP BY 문에 조건을 걸 때는 WHERE 대신 HAVING을 사용한다.
+```mysql
+SELECT CustomerID, COUNT(*) AS order_count
+  FROM Orders
+  GROUP BY CustomerID
+  HAVING order_count >= 5;
+```
+
+##### 집계함수와 CASE 조합
+```mysql
+SELECT
+  COUNT(CASE WHEN Price >= 100 THEN 1 END) AS high_count,
+  COUNT(CASE WHEN Price >= 50 AND Price < 100 THEN 1 END) AS mid_count,
+  COUNT(CASE WHEN Price < 50 THEN 1 END) AS low_count
+FROM Products;
+```
+
