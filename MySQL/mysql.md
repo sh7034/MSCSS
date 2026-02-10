@@ -1,6 +1,13 @@
 ##### 접속하기
 ```{mysql} mysql -u root -p```
-
+##### 리눅스 명령어 사용
+* `{mysql}system` 또는 `{mysql}\!` 를 명령어 앞에 삽입
+* `{mysql}\! bash` 를 입력해 임시 셸 실행
+```mysql
+\! bash
+  [명령어]
+exit
+```
 ##### 버전확인
 ```{mysql}SELECT VERSION();```
 

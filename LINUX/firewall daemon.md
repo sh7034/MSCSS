@@ -8,3 +8,14 @@
 ```firewall-cmd --permanent --add-port=[port id]```
 ```firewall-cmd --reload```
 ```firewall-cmd --list-port```
+
+```
+firewall-cmd --list-services
+
+# 만약 mysql이 보이면 제거
+firewall-cmd --permanent --remove-service=mysql
+
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.200.21" port protocol="tcp" port="3306" accept'
+
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.200.0/24" port protocol="tcp" port="3306" accept'
+```

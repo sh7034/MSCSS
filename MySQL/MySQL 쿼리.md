@@ -83,4 +83,11 @@ SELECT
   COUNT(CASE WHEN Price < 50 THEN 1 END) AS low_count
 FROM Products;
 ```
+##### 리눅스 명령어와 SQL쿼리 조합
+```mysql
+mysql> pager grep 'root'  -- 이후 모든 쿼리 결과에서 'root'가 포함된 줄만 출력
+mysql> SELECT Host, User FROM mysql.user;
+-- (결과 중 root 관련 행만 출력됨)
 
+mysql> nopager            -- 페이저 설정 해제
+```
