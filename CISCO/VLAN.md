@@ -1,5 +1,7 @@
 Chapter 15. 가상랜(VLAN) 설정
 
+show vlan
+
 1. 장비 기본 설정
 1.1 Sw-net1 switch >>>
 enable
@@ -91,3 +93,23 @@ vtp password netpass
 vtp version 2
 end
 copy running-config startup-config
+
+
+##### L3 스위치(멀티레이어 스위치)
+```
+enable
+
+conf t
+
+vlan 10
+
+interface range fa 0/1-5
+switchport [access/trunk] vlan 10
+
+interface vlan 10
+ip address 1.0.0.1 255.0.0.0
+
+interface gi
+no switchport
+ip address 10.0.0.1 255.255.255.252
+```
