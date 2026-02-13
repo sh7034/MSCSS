@@ -3,9 +3,12 @@
 
 ##### ACL 정보 확인
 ```
-show ip access-lists
-show ip interface [인터페이스 이름]
+# 모든 ACL 정보 확인 (IPv4, IPv6, MAC등)
 show access-lists
+# IPv4
+show ip access-lists
+# 특정 인터페이스
+show ip interface [인터페이스 이름]
 ```
 ##### 표준 ACL
 1 - 99 번호를 사용한다.
