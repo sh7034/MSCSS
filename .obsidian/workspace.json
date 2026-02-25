@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "84b7f91e3a2f4c63",
+        "id": "c21436aa449ef3ea",
         "type": "tabs",
         "children": [
           {
-            "id": "5ce19e2ab766ec78",
+            "id": "9c009e7478ff7ccb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MySQL/MySQL 쿼리.md",
+                "file": "FreeIPA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MySQL 쿼리"
-            }
-          },
-          {
-            "id": "d766b52efb3974f0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CISCO/VLAN.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "VLAN"
-            }
-          },
-          {
-            "id": "6edb235a9aacbabf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CISCO/ACL.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ACL"
+              "title": "FreeIPA"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -214,15 +185,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6edb235a9aacbabf",
+  "active": "9c009e7478ff7ccb",
   "lastOpenFiles": [
+    "FreeIPA.md",
+    "MySQL/MySQL 쿼리.md",
+    "CISCO/VLAN.md",
+    "CISCO/ACL.md",
     "NAT.md",
     "IPtime AC 설정.md",
-    "CISCO/ACL.md",
-    "CISCO/VLAN.md",
     "MySQL/MySQL 백업 및 불러오기.md",
     "MySQL/mysql.md",
-    "MySQL/MySQL 쿼리.md",
     "LINUX/firewall daemon.md",
     "WEB 서버.md",
     "MySQL/MySQL EX2.md",
@@ -230,7 +202,6 @@
     "LINUX/DNS 서버.md",
     "CISCO/CISCO IOS Router.md",
     "CISCO/CISCO 가상터미널 콘솔.md",
-    "CISCO/라우팅 프로토콜.md",
-    "Untitled.md"
+    "CISCO/라우팅 프로토콜.md"
   ]
 }
