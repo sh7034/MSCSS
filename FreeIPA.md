@@ -1,4 +1,6 @@
-IDM 서버
+IDM 서버는 인증관리와 DNS의 기능을 겸한다.
+IDM 서버가 관리하는 컴퓨터들은 호스트로, 사용자 계정은 사용자로 관리된다.
+IDM 서버는 어떤 사용자가 어떤 호스트에 접속하여 어떤 작업을 할 수 있는지를 통제하기 위해 sudo 룰과 HBAC 룰을 사용한다.
 ##### 사용자
 ```bash
 ipa user-add \
@@ -27,7 +29,7 @@ sudo ipa-client-install \
   --mkhomedir \
   --unattended
 ```
-##### 명령어
+##### sudo 룰 명령어
 ```bash
 ipa sudocmd-add [명령어 경로]
 ipa sudocmdgroup-add [명령어 그룹]
