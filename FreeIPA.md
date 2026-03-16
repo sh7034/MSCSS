@@ -1,7 +1,15 @@
-IDM 서버는 인증관리와 DNS의 기능을 겸한다.
-IDM 서버가 관리하는 컴퓨터들은 호스트로, 사용자 계정은 사용자로 관리된다.
-IDM 서버는 어떤 사용자가 어떤 호스트에 접속하여 어떤 작업을 할 수 있는지를 통제하기 위해 sudo 룰과 HBAC 룰을 사용한다.
-##### 사용자
+IdM 서버는 주로 인증관리와 DNS의 기능을 겸한다.
+IdM 서버가 관리하는 컴퓨터들은 호스트로, 사용자 계정은 사용자로 관리된다.
+IdM 서버는 어떤 사용자가 어떤 호스트에 접속하여 어떤 작업을 할 수 있는지를 통제하기 위해 sudo 룰과 HBAC 룰을 사용한다.
+
+##### dnf 패키지 설치
+```bash
+dnf install -y ipa-server # IdM 서버
+dnf install -y ipa-server-dns # DNS 서버
+
+dnf install -y ipa-client # IdM 클라이언트
+```
+##### 사용자 계정
 ```bash
 ipa user-add \
   --first=[이름] \ # 필수
@@ -17,7 +25,7 @@ ipa host-add [호스트]
 ipa hostgroup-add [호스트 그룹]
 ipa hostgroup-add-member [호스트 그룹] --sudocmds={[호스트 경로]}
 ```
-###### 클라이언트 등록
+###### 클라이언트 등록(호스트 장치에서)
 ```bash
 sudo ipa-client-install \
   --domain=kcci.edu \
