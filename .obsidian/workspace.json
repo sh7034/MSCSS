@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f6c5c1cc322000f3",
+            "id": "8308cf8259d06b52",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WSL Docker/Docker.md",
+                "file": "Secui/NAT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker"
+              "title": "NAT"
             }
           },
           {
-            "id": "0d3f924d54f6c28c",
+            "id": "65f592243eeea8f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git.md",
+                "file": "Secui/방화벽 장비를 이용한 L2 브릿지 모드 및 BNAT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git"
+              "title": "방화벽 장비를 이용한 L2 브릿지 모드 및 BNAT"
             }
           },
           {
@@ -212,13 +212,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0d3f924d54f6c28c",
+  "active": "65f592243eeea8f6",
   "lastOpenFiles": [
+    "Secui/NAT.md",
+    "Secui/방화벽 장비를 이용한 L2 브릿지 모드 및 BNAT.md",
+    "MySQL/mysql.md",
+    "Secui",
+    "MySQL/MySQL 백업 및 불러오기.md",
+    "MySQL/MySQL EX1.md",
+    "MySQL/MySQL 쿼리.md",
+    "Azure/VPN & VNet Gateway.md",
+    "Azure/Bastion Tunnel 접속.md",
+    "Azure/Bastion SSH 접속.md",
+    "Azure/Application Gateway.md",
+    "MySQL/MySQL EX2.md",
     "Git.md",
     "C/C 컴파일러 환경.md",
     "WSL Docker/Docker.md",
     "WEB 서버.md",
-    "Azure/VPN & VNet Gateway.md",
     "SSL 인증서.md",
     "Regular Expression.md",
     "Pasted image 20260305144209.png",
@@ -228,21 +239,11 @@
     "IdM/FreeIPA.md",
     "IdM",
     "C",
-    "Azure/Bastion Tunnel 접속.md",
-    "Azure/Application Gateway.md",
-    "Azure/Bastion SSH 접속.md",
     "WSL Docker/Docker Compose.md",
     "WSL Docker/Dockerfile.md",
     "CLI모드.md",
     "WSL Docker",
     "Compose.md",
-    "WSL Docker/WSL.md",
-    "MySQL/MySQL 쿼리.md",
-    "CISCO/VLAN.md",
-    "CISCO/ACL.md",
-    "MySQL/MySQL 백업 및 불러오기.md",
-    "MySQL/mysql.md",
-    "LINUX/firewall daemon.md",
-    "MySQL/MySQL EX2.md"
+    "WSL Docker/WSL.md"
   ]
 }
