@@ -48,7 +48,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -212,7 +212,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "65f592243eeea8f6",
+  "active": "f236a0670d204e3e",
   "lastOpenFiles": [
     "Secui/NAT.md",
     "Secui/방화벽 장비를 이용한 L2 브릿지 모드 및 BNAT.md",
