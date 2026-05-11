@@ -19,3 +19,21 @@ sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address
 
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.200.0/24" port protocol="tcp" port="3306" accept'
 ```
+
+
+#### 허용 서비스 및 포트 파일 보기
+`vi /etc/firewalld/zones/public.xml`
+```
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+  <short>Public</short>
+  <description>For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.</description>
+  <service name="ssh"/>
+  <service name="dhcpv6-client"/>
+  <service name="cockpit"/>
+  <port port="21" protocol="tcp"/>
+  <port port="65000-65010" protocol="tcp"/>
+  <forward/>
+</zone>
+
+```
