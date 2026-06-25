@@ -10,6 +10,10 @@
 `{Dockerfile}RUN` 빌드 과정 중 실행할 명령
 `{Dockerfile}CMD` 빌드 완료 후, 컨테이너 시작 시 실행할 명령 (`docker run` 에 명령어 사용시 덮어씌워짐)
 `{Dockerfile}ENTRYPOINT` 컨테이너 시작 시 실행할 고정 실행 명령
+
+```sh
+docker build -t <리포지토리>/<이미지> .
+```
 ### 예시
 ```Dockerfile
 FROM ubuntu:24.04

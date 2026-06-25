@@ -38,6 +38,31 @@ firewall-cmd --reload
 dnf install -y haproxy
 vi /etc/haproxy/haproxy.cfg
 
+#==========수정내용===========
+#---------------------------------------------------------------------
+# main frontend which proxys to the backends
+#---------------------------------------------------------------------
+frontend main
+    bind *:5000
+    acl url_static       path_beg       -i /static /images /javascript /stylesheets
+    acl url_static       path_end       -i .jpg .gif .png .css .js
+
+    use_backend app          if url_static # static을 app
+    default_backend             app     
+    
+    
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend app #app 백엔드서버 목록
+    balance     roundrobin
+    server  app1 10.0.0.11:60080 check
+    server  app2 10.0.0.11:60180 check
+#    server  app3 127.0.0.1:5003 check
+#    server  app4 127.0.0.1:5004 check
+
+#============================
+
 systemctl enable haproxy
 firewall-cmd --reload
 ```
