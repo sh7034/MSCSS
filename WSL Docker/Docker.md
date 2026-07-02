@@ -38,7 +38,7 @@ newgrp docker
 docker run hello-world
 
 docker login -u MYDOCKER -p <토큰_또는_비밀번호>
-docker login -u sh7034 -p dckr_pat_wCAmp_3_hnfRyjEY7mwOFcybjUY
+docker login -u sh7034 -p 
 ```
 
 ### 컨테이너
