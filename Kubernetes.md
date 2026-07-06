@@ -48,9 +48,18 @@ RBAC 적용 가능
 ```sh
 kubectl get namespaces
 kubectl delete ns <네임스페이스>
+# 오브젝트를 특정 네임스페이스에 생성
+kubectl apply -f ingress.yml --namespace ingress-nginx
 ```
 
 ```sh
+# docker에서 이미지를 가져와 임포트
+docker pull nginx:1.14
+docker save -o nginx.tar nginx:1.14
+scp nginx.tar root@10.0.0.12:/root
+
+ctr -n k8s.io image import nginx.tar
+
 # yaml 적용
 kubectl apply -f myword.yml
 kubectl apply -f nginx.yml --dry-run=server
@@ -58,6 +67,11 @@ kubectl apply -f nginx.yml --dry-run=server
 kubectl get po -o wide
 # 2초 간격 모니터링
 watch -n 2 kubectl get pod,rs,deploy -o wide
+
+# 파드 내 명령실행
+kubectl exec -it dep-nginx-555fbbdd6f-6gmh7 -- nginx -v
+#디플로이먼트 설정 수정
+kubectl edit deploy dep-nginx
 ```
 ###### mysql + wordpress 복합 pod 코드
 ```yml
