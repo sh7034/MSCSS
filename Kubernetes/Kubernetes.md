@@ -19,6 +19,22 @@ sudo kubeadm join 10.0.0.11:6443 --token 98pkia... --discovery-token-ca-cert-has
 컨테이너가 구동될 수 있도록 CPU와 메모리 리소스 제공
 ```sh
 kubectl get nodes
+
+# 노드에 레이블 부여
+kubectl label nodes <노드이름> <labelKey>=<Value>
+kubectl get nodes --show-labels
+```
+
+- .yml 파일에서 파드가 생성될 노드 지정 방법 2가지:
+```yml
+spec:
+	nodeName: <노드이름>
+```
+
+```yml
+spec:
+	nodeSelector:
+		<labelKey>: <Value>
 ```
 #### Pod
 쿠버네티스가 인식하고 관리하는 **가장 작은 실행 단위**
@@ -33,6 +49,23 @@ kubectl run httpd --image=httpd --dry-run=client -o yaml > httpd.yml
 # describe
 kubectl describe po <파드이름>
 ```
+###### nginx.yml
+```yml
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: nginx
+  labels:
+    app: nginx
+    env: test
+spec:
+  containers:
+    - name: n1
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+```
 #### Service
 동적으로 변하는 파드들을 외부와 연결해 주는 고정된 통로(접근점)
 파드의 집합에 접근할 수 있는 고정된 IP와 포트를 제공하는 객체
@@ -40,6 +73,55 @@ kubectl describe po <파드이름>
 ```sh
 kubectl get svc
 kubectl expose --name nginx deploy dep-nginx --type=NodePort
+```
+
+##### ClusterIP 
+클러스터 내부에서만 접근할 수 있는 가상의 고정 IP 부여
+외부 통신 불가, 같은 클러스터 내의 파드들끼리 통신하는 용도
+서비스의 기본 설정값
+- 포트 키: 
+	- `port`: 서비스 오브젝트가 사용하는 포트
+	- `targetPort`=`containerPort`: 파드가 열어둔 포트. 전자는 서비스를 선언할 때, 후자는 파드나 디플로이먼트를 선언할 때 쓰는 키 이름
+###### clusterNgPo.yml
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-ngpod
+  labels:
+    env: test
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: nginx
+```
+##### NodePort
+모든 노드 컴퓨터의 포트 30000-32767 중 똑같은 번호 하나를 열어 외부와 통신
+외부에서 `<NodeIP>:<NodePort>`로 접속하면 해당 서비스가 지정하는 파드로 트래픽을 전달
+- 포트 키:
+	- `nodePort`: 외부 사용자가 노드의 IP로 접속할 때 사용하는 포트
+###### nodeNgPo.yml
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-nginx
+  labels:
+    env: test
+    type: node
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 30000
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: nginx
 ```
 #### Namespace
 단일 클러스터의 논리적 분할
@@ -129,7 +211,7 @@ kubectl get pod,rs
 - 배포 전략
 	- Rolling Update: 기존 버전 파드를 하나씩 죽이고 새 버전 파드를 하나씩 띄움
 	- Blue-Green: 완전히 새로운 버전을 따로 띄워 트래픽을 전환
-###### httpd 디플로이먼트 코드
+###### httpd-dep.yml
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -164,7 +246,7 @@ spec:
               memory: "50Mi"
 
 ```
-###### mysql 디플로이먼트 코드
+###### mysql-dep.yml
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -200,7 +282,7 @@ spec:
             - name: MYSQL_PASSWORD
               value: 'It12345!'
 ```
-###### wordpress 디플로이먼트 코드
+###### wordpress-dep.yml
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -237,57 +319,3 @@ spec:
               value: 'It12345!'
 ```
 
-###### podnginx.yml
-```yml
-apiVersion: v1
-kind: Pod
-metadata: 
-  name: nginx
-  labels:
-    app: nginx
-    env: test
-spec:
-  containers:
-    - name: n1
-      image: nginx
-      imagePullPolicy: IfNotPresent
-      ports:
-        - containerPort: 80
-```
-###### clusterpo.yml
-```yml
-apiVersion: v1
-kind: Service
-metadata:
-  name: svc-ngpod
-  labels:
-    env: test
-spec:
-  type: ClusterIP
-  ports:
-  - port: 8080
-    targetPort: 80
-    protocol: TCP
-  selector:
-    app: nginx
-```
-
-###### nodeng.yml
-```yml
-apiVersion: v1
-kind: Service
-metadata:
-  name: node-nginx
-  labels:
-    env: test
-    type: node
-spec:
-  type: NodePort
-  ports:
-  - port: 8080
-    nodePort: 30000
-    targetPort: 80
-    protocol: TCP
-  selector:
-    app: nginx
-```

@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "52bbee70b3d0b1bb",
+            "id": "f538a347cd1da3ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes.md",
+                "file": "Kubernetes/Kubernetes.md",
                 "mode": "source",
                 "source": false
               },
@@ -34,35 +34,49 @@
             }
           },
           {
-            "id": "7e3f028781ffe812",
+            "id": "6a6f4c740cbab65a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes Ingress.md",
+                "file": "Kubernetes/Kubernetes Volume.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kubernetes Ingress"
+              "title": "Kubernetes Volume"
             }
           },
           {
-            "id": "fe1c79639008bf34",
+            "id": "57bd5410ad3adc30",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "무중단 배포.md",
+                "file": "Kubernetes ConfigMap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "무중단 배포"
+              "title": "Kubernetes ConfigMap"
+            }
+          },
+          {
+            "id": "989b7909291f4a86",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NFS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "NFS"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -226,38 +240,39 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7e3f028781ffe812",
+  "active": "989b7909291f4a86",
   "lastOpenFiles": [
-    "Kubernetes.md",
-    "Kubernetes Ingress.md",
-    "무중단 배포.md",
+    "리눅스 파일 ACL.md",
+    "NFS.md",
+    "Kubernetes/Kubernetes Volume.md",
+    "Kubernetes ConfigMap.md",
+    "Apache.md",
+    "Azure/az vnet peering.md",
+    "Kubernetes/Kubernetes.md",
+    "Nginx.md",
+    "NGINX WEB 서버.md",
     "WSL Docker/Docker.md",
-    "CSP.md",
-    "Azure Cloud Data & App Security.md",
-    "SSL 인증.md",
-    "WSL Docker/Dockerfile.md",
-    "Docker HAproxy+Nginx+Apache.md",
-    "docker wp-msyql.md",
-    "MySQL/mysql.md",
-    "Docker Network.md",
-    "rocky bastion & HA.md",
-    "scp.md",
+    "무제.md",
+    "VIM.md",
+    "CLI모드.md",
+    "LINUX/systemctl.md",
+    "LINUX/tar와 백업.md",
+    "CISCO/라우팅 프로토콜.md",
+    "NAT.md",
+    "Job.md",
+    "Kubernetes/Kubernetes Ingress.md",
+    "IaC.md",
+    "무중단 배포.md",
+    "WSL Docker/docker wp-msyql.md",
+    "Window VM 기본설정.md",
+    "Wordpress-MySQL-HA Proxy.md",
+    "VPN.md",
+    "Storage.md",
+    "Kubernetes",
     "Docker-HAproxy.drawio 2.png",
     "Docker-HAproxy.drawio 1.png",
     "Docker-HAproxy.drawio.png",
-    "IdM/FreeIPA.md",
-    "Docker wp-msyql.md",
-    "hymnos akathistos kontakion IA`.md",
-    "Git.md",
-    "DHCP.md",
-    "DNS.md",
-    "디스크 사용.md",
-    "Storage.md",
-    "리눅스 리포지토리.md",
     "Pasted image 20260616112747.png",
-    "VPN.md",
-    "Wordpress-MySQL-HA Proxy.md",
-    "Window VM 기본설정.md",
     "Secui",
     "Pasted image 20260305144209.png",
     "IdM",
