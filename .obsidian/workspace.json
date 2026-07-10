@@ -34,49 +34,21 @@
             }
           },
           {
-            "id": "6a6f4c740cbab65a",
+            "id": "42927fd48a65d4eb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes/Kubernetes Volume.md",
+                "file": "Ansible.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kubernetes Volume"
-            }
-          },
-          {
-            "id": "57bd5410ad3adc30",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes ConfigMap.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Kubernetes ConfigMap"
-            }
-          },
-          {
-            "id": "989b7909291f4a86",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "NFS.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "NFS"
+              "title": "Ansible"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -240,15 +212,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "989b7909291f4a86",
+  "active": "f538a347cd1da3ef",
   "lastOpenFiles": [
-    "리눅스 파일 ACL.md",
-    "NFS.md",
+    "Kubernetes/Kubernetes Ingress.md",
+    "Ansible.md",
     "Kubernetes/Kubernetes Volume.md",
-    "Kubernetes ConfigMap.md",
+    "Kubernetes/Kubernetes hpa.md",
+    "Kubernetes/Kubernetes ConfigMap.md",
+    "Kubernetes/Kubernetes.md",
+    "IaC.md",
+    "NFS.md",
+    "리눅스 파일 ACL.md",
     "Apache.md",
     "Azure/az vnet peering.md",
-    "Kubernetes/Kubernetes.md",
     "Nginx.md",
     "NGINX WEB 서버.md",
     "WSL Docker/Docker.md",
@@ -260,14 +236,10 @@
     "CISCO/라우팅 프로토콜.md",
     "NAT.md",
     "Job.md",
-    "Kubernetes/Kubernetes Ingress.md",
-    "IaC.md",
     "무중단 배포.md",
     "WSL Docker/docker wp-msyql.md",
     "Window VM 기본설정.md",
     "Wordpress-MySQL-HA Proxy.md",
-    "VPN.md",
-    "Storage.md",
     "Kubernetes",
     "Docker-HAproxy.drawio 2.png",
     "Docker-HAproxy.drawio 1.png",

@@ -7,14 +7,14 @@ kubectl create configmap wordenv --from-env-file word.conf
 
 kubectl expose --name svcmysql pod mysql --port 3306
 ```
-###### mysql.conf
+###### `mysql.conf`
 ```sh
 MYSQL_ROOT_PASSWORD=It12345!
 MYSQL_DATABASE=word
 MYSQL_USER=shkim
 MYSQL_PASSWORD=It12345!
 ```
-###### word.conf
+###### `word.conf`
 ```sh
 WORDPRESS_DB_HOST=svc-mysql
 WORDPRESS_DB_NAME=word
@@ -23,7 +23,7 @@ WORDPRESS_DB_USER=shkim
 ```
 
 ##### 예제 2: MySQL-Wordpress 연동용 환경변수 (.yml 파일 사용)
-###### mysqlconf.yml
+###### `mysqlconf.yml`
 ```yml
 apiVersion: v1
 kind: ConfigMap
@@ -38,7 +38,7 @@ data:
   MYSQL_USER: shkim
   MYSQL_PASSWORD: It12345!
 ```
-###### wordconf.yml
+###### `wordconf.yml`
 ```yml
 apiVersion: v1
 kind: ConfigMap
@@ -54,7 +54,7 @@ data:
   WORDPRESS_DB_PASSWORD: It12345!
 
 ```
-###### mysql.yml
+###### `mysql.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -74,7 +74,7 @@ spec:
       - configMapRef:
           name: mysqlenv
 ```
-###### word.yml
+###### `word.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -97,7 +97,7 @@ spec:
 ##### 예제 3: httpd 및 nginx용 index.html 
 indexdata.yml로 index라는 이름의 ConfigMap을 생성, babo.html과 coco.html을 정의
 각각 Nginx 파드와 Apache2 파드에서 루트 페이지 문서로 사용케 지정
-###### indexdata.yml
+###### `indexdata.yml`
 ```yml
 apiVersion: v1
 kind: ConfigMap
@@ -117,7 +117,7 @@ data:
     </body>
     </html>
 ```
-###### NgPo.yml
+###### `NgPo.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -139,7 +139,7 @@ spec:
     configMap:
       name: index
 ```
-###### ApPo.yml
+###### `ApPo.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -167,7 +167,7 @@ spec:
 Base64 인코딩 적용
 ##### 예제 4: MySQL 비밀번호 환경변수만 secret으로 저장
 
-###### mysqlconf.yml
+###### `mysqlconf.yml`
 ```yml
 apiVersion: v1
 kind: ConfigMap
@@ -180,7 +180,7 @@ data:
   MYSQL_DATABASE: word
   MYSQL_USER: shkim
 ```
-###### mysqlsec.yml
+###### `mysqlsec.yml`
 ```sh
 echo -n 'It12345' | base64
 SXQxMjM0NSE=
@@ -196,5 +196,3 @@ data:
   MYSQL_PASSWORD: SXQxMjM0NQo=
 ```
 
-
-# d

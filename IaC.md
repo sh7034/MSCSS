@@ -8,10 +8,14 @@
 ## IaC 도구 종류
 #### 구성관리
 ##### Puppet
+- Redhat
 ##### Chef
 ##### Saultstack
 ##### Ansible
+- Redhat
 #### 배포관리
 ##### Terraform
 - 다양한 플랫폼에서 사용 가능
+##### Vagrant
+ - 가상머신
 ##### AWS CloudFormation

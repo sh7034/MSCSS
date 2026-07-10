@@ -3,7 +3,28 @@
 - 자가 치유
 - 자동 스케일링
 - 로드 밸런싱
+```sh
+# docker에서 이미지를 가져와 임포트
+docker pull nginx:1.14
+docker save -o nginx.tar nginx:1.14
+scp nginx.tar root@10.0.0.12:/root
+# docker 이미지를 임포트
+ctr -n k8s.io image import nginx.tar
 
+# yaml 배포
+kubectl apply -f myword.yml
+# 테스트 배포
+kubectl apply -f nginx.yml --dry-run=server
+
+kubectl get po -o wide
+# 2초 간격 모니터링
+watch -n 2 kubectl get pod,rs,deploy -o wide
+
+# 파드 내 명령실행
+kubectl exec -it dep-nginx-555fbbdd6f-6gmh7 -- nginx -v
+#디플로이먼트 설정 수정
+kubectl edit deploy dep-nginx
+```
 #### Cluster
 전체 시스템
 마스터(컨트롤 플레인)와 노드 컴퓨터들로 구성
@@ -28,13 +49,13 @@ kubectl get nodes --show-labels
 - .yml 파일에서 파드가 생성될 노드 지정 방법 2가지:
 ```yml
 spec:
-	nodeName: <노드이름>
+  nodeName: <노드이름>
 ```
 
 ```yml
 spec:
-	nodeSelector:
-		<labelKey>: <Value>
+  nodeSelector:
+    <labelKey>: <Value>
 ```
 #### Pod
 쿠버네티스가 인식하고 관리하는 **가장 작은 실행 단위**
@@ -48,8 +69,17 @@ kubectl run alpine -it --image=alpine -- sh
 kubectl run httpd --image=httpd --dry-run=client -o yaml > httpd.yml
 # describe
 kubectl describe po <파드이름>
+# 명령 실행
+kubectl exec <파드이름> -- <명령어>
+
+# cordon: 노드에 신규 파드 스케줄링 금지
+kubectl cordon <노드이름>
+# uncordon: cordon 해제
+kubectl uncordon <노드이름>
+# drain: 노드에 신규 파드 스케줄링 금지 후 이미 생성된 파드를 다른 노드로 이전(evict)
+kubectl drain <노드이름> --ignore-daemonsets --delete-emptydir-data
 ```
-###### nginx.yml
+###### `nginx.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -133,29 +163,7 @@ kubectl delete ns <네임스페이스>
 # 오브젝트를 특정 네임스페이스에 생성
 kubectl apply -f ingress.yml --namespace ingress-nginx
 ```
-
-```sh
-# docker에서 이미지를 가져와 임포트
-docker pull nginx:1.14
-docker save -o nginx.tar nginx:1.14
-scp nginx.tar root@10.0.0.12:/root
-
-ctr -n k8s.io image import nginx.tar
-
-# yaml 적용
-kubectl apply -f myword.yml
-kubectl apply -f nginx.yml --dry-run=server
-
-kubectl get po -o wide
-# 2초 간격 모니터링
-watch -n 2 kubectl get pod,rs,deploy -o wide
-
-# 파드 내 명령실행
-kubectl exec -it dep-nginx-555fbbdd6f-6gmh7 -- nginx -v
-#디플로이먼트 설정 수정
-kubectl edit deploy dep-nginx
-```
-###### mysql + wordpress 복합 pod 코드
+###### `mysqlword.yml`
 ```yml
 apiVersion: v1
 kind: Pod
@@ -211,7 +219,7 @@ kubectl get pod,rs
 - 배포 전략
 	- Rolling Update: 기존 버전 파드를 하나씩 죽이고 새 버전 파드를 하나씩 띄움
 	- Blue-Green: 완전히 새로운 버전을 따로 띄워 트래픽을 전환
-###### httpd-dep.yml
+###### `httpd-dep.yml`
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -246,7 +254,7 @@ spec:
               memory: "50Mi"
 
 ```
-###### mysql-dep.yml
+###### `mysql-dep.yml`
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -282,7 +290,7 @@ spec:
             - name: MYSQL_PASSWORD
               value: 'It12345!'
 ```
-###### wordpress-dep.yml
+###### `wordpress-dep.yml`
 ```yml
 apiVersion: apps/v1
 kind: Deployment

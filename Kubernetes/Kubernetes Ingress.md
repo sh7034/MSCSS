@@ -6,11 +6,11 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 
 #### Bare metal
 물리적인 구성요소만
-##### 예제
+#### 예제
 http 접속에 적용할 ingress
 /pic로 접속시 nginx 파드로,
 /mov로 접속시 httpd 파드로 연결
-- ingress.yml
+###### `ingress.yml`
 ```yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -39,7 +39,7 @@ spec:
               number: 80
 ```
 
-###### 예시 1 (kubectl 명령어)
+##### 예시 1 (kubectl 명령어)
 ```sh
 kubectl apply -f ingress.yml --namespace ingress-nginx --dry-run=server
 
@@ -49,8 +49,8 @@ kubectl expose --name svc1 deployment nginx --port 80 --namespace ingress-nginx
 kubectl expose --name svc2 deployment apache --port 80 --namespace ingress-nginx
 ```
 
-###### 예시 2 (yaml)
-- nginx-dep.yml
+##### 예시 2 (yaml)
+###### `nginx-dep.yml`
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -77,7 +77,7 @@ spec:
         ports:
         - containerPort: 80
 ```
-- nginxsvc.yml
+###### nginxsvc.yml
 ```yml
 apiVersion: v1
 kind: Service
@@ -94,8 +94,7 @@ spec:
   selector:
     tem: nginx
 ```
-
-- apache-dep.yml
+###### apache-dep.yml
 ```yml
 apiVersion: apps/v1
 kind: Deployment
@@ -122,7 +121,7 @@ spec:
         ports:
         - containerPort: 80
 ```
-- apachesvc.yml
+###### apachesvc.yml
 ```yml
 apiVersion: v1
 kind: Service
