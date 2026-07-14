@@ -1,4 +1,5 @@
 루트페이지 파일 경로
 ```
-usr/local/apache2/htdocs
+usr/local/apache2/htdocs/index.html
+/var/www/html/index.html
 ```
