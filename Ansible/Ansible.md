@@ -219,7 +219,7 @@ ap mkdir.yml
   tasks:
   - name: wordpress file download
     ansible.builtin.get_url:
-      url: https://kor.wordpress.org/wordpress-7.0.1-ko_KR.tar.gz
+      url: https://ko.wordpress.org/wordpress-7.0.1-ko_KR.tar.gz
       dest: /root/
 
   - name: package install
