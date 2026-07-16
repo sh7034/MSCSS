@@ -331,4 +331,67 @@ ap mkdir.yml
     - wordpress-7.0.1-ko_KR.tar.gz
     - wordpress
 ```
+##### `apt` 모듈
+###### `apache2.yml`
+```yml
+---
+- name: ubuntu24.04 install apache
+  hosts: ubuntu
+  gather_facts: true
+  ignore_errors: true
+
+  tasks:
+  - name: install apache2
+    apt:
+      name: apache2
+      state: latest
+
+  - name: system start httpd
+    systemd:
+      name: apache2
+      state: started
+```
+###### `rmapache2.yml`
+```yml
+---
+- name: remove apache
+  hosts: ubuntu
+  gather_facts: false
+  ignore_errors: true
+
+  tasks:
+  - name: remove apache2
+    apt:
+      name: apache2
+      state: absent
+      autoremove: true
+      purge: true
+```
 #### 
+```
+---
+#
+- name: "started {{ web }}"
+  systemd:
+    name: "{{ web }}"
+    state: started
+    
+- name "restarted {{ web }}"
+  systemd:
+    name: "{{ web }}"
+    state: restarted
+```
+
+```
+---
+
+- name: print message install apache
+  debug:
+    msg: "Rockylinux9에 {{ web }} 설치를 시작합니다."
+  
+- name: install apache
+  dnf: 
+    name: "{{ web }}"
+    state: latest
+  notify: started "{{ web }}"
+```
